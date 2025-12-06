@@ -28,8 +28,8 @@ export default function Home() {
 
   const [info, setInfo] = useState<TalkooInfo | null>(null);
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [selectedFirst, setSelectedFirst] = useState(null);
-  const [selectedSecond, setSelectedSecond] = useState(null);
+  const [selectedFirst, setSelectedFirst] = useState<string | null>(null);
+  const [selectedSecond, setSelectedSecond] = useState<string | null>(null);
 
  
   const [form, setForm] = useState<FormData>({
