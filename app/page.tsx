@@ -33,10 +33,10 @@ export default function Home() {
       .then((data) => setTasks(data.tasks));
   }, []);
 
-  const handleChange = (e) =>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const submitForm = async (e) => {
+  const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!form.firstName || !form.email || !form.allergies) {
