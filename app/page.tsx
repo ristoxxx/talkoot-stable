@@ -7,16 +7,36 @@ import confetti from "canvas-confetti";
 const BACKEND = "https://script.google.com/macros/s/AKfycbwYwREpsfMTSxxc2m60oyvI2eiPM5DUatv10Qwv6hwUNv-XxLXeNoxl_TBwoF8xAglQ/exec"; // 🔥 lisää URL tähän
 
 export default function Home() {
-  const [info, setInfo] = useState(null);
-  const [tasks, setTasks] = useState([]);
+  type TalkooInfo = {
+    name: string;
+    location: string;
+    start: string;
+    end: string;
+  };
+
+  type Task = {
+  name: string;
+  needed: number;
+  };
+
+  type FormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  allergies: string;
+  };
+
+  const [info, setInfo] = useState<TalkooInfo | null>(null);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [selectedFirst, setSelectedFirst] = useState(null);
   const [selectedSecond, setSelectedSecond] = useState(null);
 
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    allergies: "",
+ 
+  const [form, setForm] = useState<FormData>({
+  firstName: "",
+  lastName: "",
+  email: "",
+  allergies: "",
   });
 
   const [submitting, setSubmitting] = useState(false);
