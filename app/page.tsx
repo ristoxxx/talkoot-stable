@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import clsx from "clsx";
 import confetti from "canvas-confetti";
 
-const BACKEND = import.meta.env.VITE_BACKEND; // 🔥 lisää URL tähän
+const BACKEND = process.env.NEXT_PUBLIC_BACKEND!; // 🔥 lisää URL tähän
 
 export default function Home() {
   type TalkooInfo = {
